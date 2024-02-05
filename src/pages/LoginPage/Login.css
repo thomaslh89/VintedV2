@@ -1,0 +1,30 @@
+.mainlog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.inputlog {
+  border: none;
+  border-bottom: rgb(112, 52, 52) 1px solid;
+  width: 275px;
+  margin: 10px;
+}
+
+.buttonlog {
+  height: 50px;
+  width: 270px;
+  background-color: #09b0ba;
+
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  border: none;
+}

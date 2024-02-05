@@ -1,0 +1,33 @@
+.div1 {
+  height: 100px;
+  width: 1000px;
+  background-color: white;
+  border: 1px red solid;
+}
+.div1 input {
+  margin-left: 400px;
+}
+
+.mainpublish {
+  background-color: grey;
+}
+
+.mainpublish > input {
+  width: 100px;
+}
+
+#brand {
+  margin: 100px;
+  width: 200px;
+  border: 1px red solid;
+}
+#size {
+  margin: 100px;
+  width: 200px;
+}
+.publish {
+  width: 1000pxpx;
+  border: red 1px solid;
+  margin: 2px;
+  padding: 10px;
+}

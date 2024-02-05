@@ -1,0 +1,49 @@
+.mainoffer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ebedee;
+}
+.offerImage {
+  margin: 50px;
+  height: 600px;
+  width: 600px;
+  object-fit: contain;
+}
+
+.fiche {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 200px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 30px;
+  border: white 1px solid;
+}
+.titleproduct {
+  width: 250px;
+  margin-left: 20px;
+}
+.ownerAvatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.ownerAvatar {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.buy {
+  background-color: #09b0ba;
+  color: white;
+  cursor: pointer;
+  width: 320px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 5px;
+}

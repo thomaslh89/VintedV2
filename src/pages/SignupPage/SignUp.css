@@ -1,0 +1,45 @@
+.signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+
+  gap: 30px;
+}
+
+.containersignup {
+  display: flex;
+  justify-content: center;
+}
+.userInput {
+  border: none;
+  border-bottom: rgb(112, 52, 52) 1px solid;
+  width: 275px;
+  margin: 10px;
+}
+.buttonsign {
+  height: 50px;
+  width: 270px;
+  background-color: #09b0ba;
+
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+.logredir {
+  color: #09b0ba;
+  text-decoration: none;
+}
+.newsletter {
+  display: flex;
+  align-items: center;
+}
+
+.check {
+  height: 20px;
+  width: 20px;
+  margin: 20px;
+  font-weight: bold;
+}
