@@ -1,70 +1,365 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  height: 100px;
-  align-items: center;
-}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.header img {
-  height: 80%;
-  width: 200px;
-}
+  .header img {
+    height: 80%;
+    width: 200px;
+  }
 
-.nav {
-  display: flex;
-  gap: 30px;
-  height: 80%;
-  align-items: center;
-}
-.nav button {
-  height: 25px;
-  width: 115px;
-  background-color: white;
-  border: #09b0ba 1px solid;
-  width: fit-content;
-  border-radius: 3px;
-  color: #09b0ba;
-  cursor: pointer;
-}
+  .nav {
+    display: flex;
+    gap: 30px;
+    height: 80%;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .nav button {
+    height: 25px;
+    width: 115px;
+    background-color: white;
+    border: #09b0ba 1px solid;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 3px;
+    color: #09b0ba;
+    cursor: pointer;
+  }
 
-.nav button:hover {
-  background-color: #09b0ba;
-  color: white;
-  cursor: pointer;
-}
-.navlog {
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-}
+  .nav button:hover {
+    background-color: #09b0ba;
+    color: white;
+    cursor: pointer;
+  }
+  .navlog {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
 
-.sellbutton {
-  height: 25px;
-  width: 115px;
-  background-color: white;
-  border: #09b0ba 1px solid;
-  width: fit-content;
-  border-radius: 3px;
-  color: #09b0ba;
-  cursor: pointer;
-}
-.sellbutton:hover {
-  background-color: #09b0ba;
-  color: white;
-  cursor: pointer;
-}
+  .sellbutton {
+    height: 25px;
+    width: 115px;
+    background-color: white;
+    border: #09b0ba 1px solid;
+    width: fit-content;
+    border-radius: 3px;
+    color: #09b0ba;
+    cursor: pointer;
+  }
+  .sellbutton:hover {
+    background-color: #09b0ba;
+    color: white;
+    cursor: pointer;
+  }
 
-.logout {
-  background-color: rgb(158, 22, 22);
-  border-radius: 3px;
-  cursor: pointer;
-  color: white;
-  border: none;
-}
+  .logout {
+    background-color: rgb(158, 22, 22);
+    border-radius: 3px;
+    cursor: pointer;
+    color: white;
+    border: none;
+  }
 
-.logout:hover {
-  background-color: white;
-  cursor: pointer;
-  color: red;
+  .logout:hover {
+    background-color: white;
+    cursor: pointer;
+    color: red;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    height: 100px;
+    align-items: center;
+  }
+
+  .header img {
+    height: 80%;
+    width: 200px;
+  }
+
+  .nav {
+    display: flex;
+    gap: 30px;
+    height: 80%;
+    align-items: center;
+  }
+  .nav button {
+    height: 25px;
+    width: 115px;
+    background-color: white;
+    border: #09b0ba 1px solid;
+    width: fit-content;
+    border-radius: 3px;
+    color: #09b0ba;
+    cursor: pointer;
+  }
+
+  .nav button:hover {
+    background-color: #09b0ba;
+    color: white;
+    cursor: pointer;
+  }
+  .navlog {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .sellbutton {
+    height: 25px;
+    width: 115px;
+    background-color: white;
+    border: #09b0ba 1px solid;
+    width: fit-content;
+    border-radius: 3px;
+    color: #09b0ba;
+    cursor: pointer;
+  }
+  .sellbutton:hover {
+    background-color: #09b0ba;
+    color: white;
+    cursor: pointer;
+  }
+
+  .logout {
+    background-color: rgb(158, 22, 22);
+    border-radius: 3px;
+    cursor: pointer;
+    color: white;
+    border: none;
+  }
+
+  .logout:hover {
+    background-color: white;
+    cursor: pointer;
+    color: red;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    height: 100px;
+    align-items: center;
+  }
+
+  .header img {
+    height: 80%;
+    width: 200px;
+  }
+
+  .nav {
+    display: flex;
+    gap: 30px;
+    height: 80%;
+    align-items: center;
+  }
+  .nav button {
+    height: 25px;
+    width: 115px;
+    background-color: white;
+    border: #09b0ba 1px solid;
+    width: fit-content;
+    border-radius: 3px;
+    color: #09b0ba;
+    cursor: pointer;
+  }
+
+  .nav button:hover {
+    background-color: #09b0ba;
+    color: white;
+    cursor: pointer;
+  }
+  .navlog {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .sellbutton {
+    height: 25px;
+    width: 115px;
+    background-color: white;
+    border: #09b0ba 1px solid;
+    width: fit-content;
+    border-radius: 3px;
+    color: #09b0ba;
+    cursor: pointer;
+  }
+  .sellbutton:hover {
+    background-color: #09b0ba;
+    color: white;
+    cursor: pointer;
+  }
+
+  .logout {
+    background-color: rgb(158, 22, 22);
+    border-radius: 3px;
+    cursor: pointer;
+    color: white;
+    border: none;
+  }
+
+  .logout:hover {
+    background-color: white;
+    cursor: pointer;
+    color: red;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    height: 100px;
+    align-items: center;
+  }
+
+  .header img {
+    height: 80%;
+    width: 200px;
+  }
+
+  .nav {
+    display: flex;
+    gap: 30px;
+    height: 80%;
+    align-items: center;
+  }
+  .nav button {
+    height: 25px;
+    width: 115px;
+    background-color: white;
+    border: #09b0ba 1px solid;
+    width: fit-content;
+    border-radius: 3px;
+    color: #09b0ba;
+    cursor: pointer;
+  }
+
+  .nav button:hover {
+    background-color: #09b0ba;
+    color: white;
+    cursor: pointer;
+  }
+  .navlog {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .sellbutton {
+    height: 25px;
+    width: 115px;
+    background-color: white;
+    border: #09b0ba 1px solid;
+    width: fit-content;
+    border-radius: 3px;
+    color: #09b0ba;
+    cursor: pointer;
+  }
+  .sellbutton:hover {
+    background-color: #09b0ba;
+    color: white;
+    cursor: pointer;
+  }
+
+  .logout {
+    background-color: rgb(158, 22, 22);
+    border-radius: 3px;
+    cursor: pointer;
+    color: white;
+    border: none;
+  }
+
+  .logout:hover {
+    background-color: white;
+    cursor: pointer;
+    color: red;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    height: 100px;
+    align-items: center;
+  }
+
+  .header img {
+    height: 80%;
+    width: 200px;
+  }
+
+  .nav {
+    display: flex;
+    gap: 30px;
+    height: 80%;
+    align-items: center;
+  }
+  .nav button {
+    height: 25px;
+    width: 115px;
+    background-color: white;
+    border: #09b0ba 1px solid;
+    width: fit-content;
+    border-radius: 3px;
+    color: #09b0ba;
+    cursor: pointer;
+  }
+
+  .nav button:hover {
+    background-color: #09b0ba;
+    color: white;
+    cursor: pointer;
+  }
+  .navlog {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .sellbutton {
+    height: 25px;
+    width: 115px;
+    background-color: white;
+    border: #09b0ba 1px solid;
+    width: fit-content;
+    border-radius: 3px;
+    color: #09b0ba;
+    cursor: pointer;
+  }
+  .sellbutton:hover {
+    background-color: #09b0ba;
+    color: white;
+    cursor: pointer;
+  }
+
+  .logout {
+    background-color: rgb(158, 22, 22);
+    border-radius: 3px;
+    cursor: pointer;
+    color: white;
+    border: none;
+  }
+
+  .logout:hover {
+    background-color: white;
+    cursor: pointer;
+    color: red;
+  }
 }
