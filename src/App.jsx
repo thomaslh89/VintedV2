@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./App.css";
 
 //import des pages
-import Stripe from "./components/stripe";
+import Stripe from "./components/Stripe";
 import HomePage from "./pages/HomePage/HomePage";
 import OfferPage from "./pages/OfferPage/OfferPage";
 import Header from "./components/Header/Header";
