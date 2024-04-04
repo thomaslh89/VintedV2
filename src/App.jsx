@@ -11,7 +11,6 @@ import SignUp from "./pages/SignupPage/SignUp";
 import Cookies from "js-cookie";
 import Login from "./pages/LoginPage/Login";
 import Publish from "./pages/PublishPage/Publish";
-import Payment from "./pages/PaymentPage/Payment";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("userToken") || "");
