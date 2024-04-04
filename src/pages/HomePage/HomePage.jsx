@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "../HomePage/Homepage.css";
+import "../HomePage/HomePage.css";
 import Hero from "../../components/Hero/Hero";
 const HomePage = () => {
   const [data, setData] = useState({});
