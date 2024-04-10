@@ -14,8 +14,8 @@ const Publish = ({ token }) => {
   const [brand, setBrand] = useState("");
   const [size, setSize] = useState("");
   const [color, setColor] = useState("");
-  const [picture, setPicture] = useState(null);
   const [preview, setPreview] = useState();
+  const [file, setFile] = useState({});
 
   // const [sharecheckbox, setSharecheckbox] = useState(false);
   const handleUpload = async (event) => {
@@ -30,7 +30,7 @@ const Publish = ({ token }) => {
     formData.append("brand", brand);
     formData.append("size", size);
     formData.append("color", color);
-    formData.append("picture", picture);
+    formData.append("picture", file);
     formData.append("preview", preview);
 
     try {
@@ -44,118 +44,179 @@ const Publish = ({ token }) => {
           },
         }
       );
-      navigate("/");
+      if (response.data._id) {
+        // redirectoin vers l'offre
+        navigate(`/offer/${response.data._id}`);
+      } else {
+        alert("Une erreur est survenue, veuillez réssayer");
+      }
     } catch (error) {
-      console.log(error.response);
+      alert(
+        error?.response?.data?.message ||
+          "Une erreur est survenue, veuillez réssayer"
+      );
     }
   };
 
   return token ? (
-    <main className="mainpublish">
-      <h2>Vends ton article</h2>
-      <form className="publish" onSubmit={handleUpload}>
-        <input
-          type="file"
-          placeholder="Ajoutez une photo"
-          onChange={(event) => {
-            const objectUrl = URL.createObjectURL(event.target.files[0]);
-            setPreview(objectUrl);
-            setPicture(event.target.files[0]);
-          }}
-        />
-        {preview && <img src={preview} alt="preview-before-upload" />}
+    <div className="mainpublish">
+      <div className="publish-container">
+        <h2>Vends ton article</h2>
+        <form className="publish" onSubmit={handleUpload}>
+          {/* {preview && <img src={preview} alt="preview-before-upload" />} */}
+          <div className="file-select">
+            {preview ? (
+              <div className="dashed-preview-image">
+                <img src={preview} alt="pré-visualisation" />
+                <div
+                  className="remove-img-button"
+                  onClick={() => {
+                    setPreview("");
+                  }}
+                >
+                  X
+                </div>
+              </div>
+            ) : (
+              <div className="dashed-preview-without">
+                <div className="input-design-default">
+                  <label htmlFor="file" className="label-file">
+                    <span className="input-sign">+</span>
+                    <span>Ajoute une photo</span>
+                  </label>
+                  <input
+                    id="file"
+                    type="file"
+                    className="input-file"
+                    onChange={(event) => {
+                      setFile(event.target.files[0]);
+                      setPreview(URL.createObjectURL(event.target.files[0]));
+                    }}
+                  />
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="text-input-section">
+            <div className="text-input">
+              <h4>Title</h4>
+              <input
+                placeholder="ex: Tshirt Nike vert"
+                type="text"
+                id="title"
+                value={title}
+                onChange={(event) => {
+                  setTitle(event.target.value);
+                }}
+              />
+            </div>
+            <div className="text-input">
+              <h4>Description</h4>
+              <textarea
+                name="description"
+                placeholder="ex: porté quelquefois, taille correctement"
+                rows="5"
+                type="text"
+                id="description"
+                value={description}
+                onChange={(event) => {
+                  setDescription(event.target.value);
+                }}
+              />
+            </div>
+          </div>
+          <div className="text-input-section">
+            <div>
+              <div className="text-input">
+                <h4>Marque</h4>
+                <input
+                  type="text"
+                  id="brand"
+                  placeholder="Nike"
+                  value={brand}
+                  onChange={(event) => {
+                    setBrand(event.target.value);
+                  }}
+                />
+              </div>
+            </div>
+            <div>
+              <div className="text-input">
+                <h4>Taille</h4>
+                <input
+                  type="text"
+                  id="size"
+                  placeholder="XS"
+                  value={size}
+                  onChange={(event) => {
+                    setSize(event.target.value);
+                  }}
+                />
+              </div>
+            </div>
+            <div>
+              <div className="text-input">
+                <h4>Couleur</h4>
+                <input
+                  placeholder="ex: Blue"
+                  type="text"
+                  id="color"
+                  value={color}
+                  onChange={(event) => {
+                    setColor(event.target.value);
+                  }}
+                />
+              </div>
+            </div>
+            <div>
+              <div className="text-input">
+                <h4>État</h4>
+                <input
+                  type="text"
+                  id="condition"
+                  placeholder="Neuf avec étiquette"
+                  value={condition}
+                  onChange={(event) => {
+                    setCondition(event.target.value);
+                  }}
+                />
+              </div>
+            </div>
+            <div>
+              <div className="text-input">
+                <h4>Lieu</h4>
+                <input
+                  type="text"
+                  id="city"
+                  placeholder="Nantes"
+                  value={city}
+                  onChange={(event) => {
+                    setCity(event.target.value);
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="text-input-section">
+            <div className="text-input">
+              <h4>Prix</h4>
 
-        <div className="div1">
-          <label htmlFor="title">Title</label>
-          <input
-            type="text"
-            id="title"
-            value={title}
-            onChange={(event) => {
-              setTitle(event.target.value);
-            }}
-          />
-          <br /> <label htmlFor="description">Description</label>
-          <input
-            type="text"
-            id="description"
-            value={description}
-            onChange={(event) => {
-              setDescription(event.target.value);
-            }}
-          />
-        </div>
-        <div></div>
-        <div>
-          <label htmlFor="brand">Marque</label>
-          <input
-            type="text"
-            id="brand"
-            value={brand}
-            onChange={(event) => {
-              setBrand(event.target.value);
-            }}
-          />
-        </div>
-        <div>
-          <label htmlFor="size">Taille</label>
-          <input
-            type="text"
-            id="size"
-            value={size}
-            onChange={(event) => {
-              setSize(event.target.value);
-            }}
-          />
-        </div>
-        <div>
-          <label htmlFor="color">Couleur</label>
-          <input
-            type="text"
-            id="color"
-            value={color}
-            onChange={(event) => {
-              setColor(event.target.value);
-            }}
-          />
-        </div>
-        <div>
-          <label htmlFor="condition">État</label>
-          <input
-            type="text"
-            id="condition"
-            value={condition}
-            onChange={(event) => {
-              setCondition(event.target.value);
-            }}
-          />
-        </div>
-        <div>
-          <label htmlFor="city">Lieu</label>
-          <input
-            type="text"
-            id="city"
-            value={city}
-            onChange={(event) => {
-              setCity(event.target.value);
-            }}
-          />
-        </div>
-        <div>
-          <label htmlFor="price">Prix</label>
-          <input
-            type="text"
-            id="price"
-            value={price}
-            onChange={(event) => {
-              setPrice(event.target.value);
-            }}
-          />
-        </div>
+              <input
+                type="text"
+                id="price"
+                placeholder="ex : 10€"
+                value={price}
+                onChange={(event) => {
+                  setPrice(event.target.value);
+                }}
+              />
+            </div>
+          </div>
 
-        <button>Ajouter</button>
-      </form>
-    </main>
+          <button className="form-validation">Ajouter</button>
+        </form>
+      </div>
+    </div>
   ) : (
     <Navigate to="/login" state={{ from: "/publish" }} />
   );
